@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
+import PublicNavbar from "@/components/shared/PublicNavbar";
 
 export default async function ServicesPage() {
   const supabase = await createClient();
@@ -17,33 +18,7 @@ export default async function ServicesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar */}
-      <nav className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold flex items-center gap-2">
-            📅 BookEase
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/services"
-              className="text-black font-medium"
-            >
-              Browse Services
-            </Link>
-            <Link
-              href="/login"
-              className="text-gray-600 hover:text-black transition"
-            >
-              Log In
-            </Link>
-            <Link
-              href="/register"
-              className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition"
-            >
-              Sign Up
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <PublicNavbar />
 
       {/* Header */}
       <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-16">
