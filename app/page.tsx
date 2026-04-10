@@ -1,36 +1,11 @@
 import Link from "next/link";
+import PublicNavbar from "@/components/shared/PublicNavbar";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold flex items-center gap-2">
-            📅 BookEase
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/services"
-              className="text-gray-600 hover:text-black transition"
-            >
-              Browse Services
-            </Link>
-            <Link
-              href="/login"
-              className="text-gray-600 hover:text-black transition"
-            >
-              Log In
-            </Link>
-            <Link
-              href="/register"
-              className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition"
-            >
-              Sign Up
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <PublicNavbar />
 
       {/* Hero Section with Gradient Background */}
       <section className="relative overflow-hidden">
