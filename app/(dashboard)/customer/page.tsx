@@ -24,11 +24,17 @@ export default async function CustomerDashboard() {
     .order('created_at', { ascending: false })
     .limit(5)
 
+  // Get name from profile, or fallback to email, or fallback to 'there'
+  const displayName = profile?.full_name || 
+                      user?.user_metadata?.full_name || 
+                      user?.email?.split('@')[0] || 
+                      'there'
+
   return (
     <div className="p-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">
-          Welcome, {profile?.full_name} 👋
+          Welcome, {displayName} 👋
         </h1>
         <p className="text-gray-500 mb-8">
           Manage your bookings here
